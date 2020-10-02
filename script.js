@@ -12,19 +12,20 @@ var selectBig = "false";
 var selectSmall = "false";
 var selectNum = "false";
 var selectSpecial = "false";
+var passLength = 0;
 
 //on button click - prompt "how long do you want your password to be? Has to be between 8-128 characters"
-
+//if passLength is between 8-128 then move on, if not ask prompt again
 document.getElementById("generate").addEventListener("click", function(){
+  while (passLength > 129 || passLength < 7 || isNaN(passLength)){
   var passPrompt = prompt("how long do you want your password to be? Has to be between 8-128 characters");
   console.log(passPrompt); 
 //parseInt prompt to passLength
-  var passLength = parseInt(passPrompt);
+  passLength = parseInt(passPrompt);
   console.log(passLength);
-//if passLength is between 8-128 then move on, if not ask prompt again
-//if (passLength >= 129 || passLength <= 7) {
-  //need to figure out this part of the code first.
-//}
+};
+
+
 //need to fix this loop
 while (selectBig === "false" && selectSmall === "false" && selectNum === "false" && selectSpecial === "false") {
   selectBig = confirm("Do you want uppercase letters?");
@@ -37,8 +38,6 @@ while (selectBig === "false" && selectSmall === "false" && selectNum === "false"
   console.log(selectSpecial);
 }
 });
-
-
 
 //confirm "do you want upper case, lower, etc"
 //if no confirms then loop back to the confirms
