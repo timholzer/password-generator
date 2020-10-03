@@ -37,6 +37,7 @@ document.getElementById("generate").addEventListener("click", function(){
   if (selectBig || selectSmall || selectSpecial || selectNum) {
   } 
   else {
+    alert("Make sure to select at least one option");
     selectBig = confirm("Do you want uppercase letters?");
     selectSmall = confirm("Do you want lowercase letters?");
     selectNum = confirm("Do you want numbers?");
@@ -47,20 +48,33 @@ document.getElementById("generate").addEventListener("click", function(){
   console.log(selectSmall);
   console.log(selectNum);
   console.log(selectSpecial);
-  });
-
   
-  //gotta work on this part of pushing the selected arrays into the array of all the selected characters.
-  // if (selectBig === "true") {
-  //   selectedChars.push.apply(selectedChars, bigLetters);
-  // }
-  // console.log(selectedChars);
+  //push the selected arrays into the array of all the selected characters.
+  if (selectBig) {
+    selectedChars = selectedChars.concat(bigLetters);
+  console.log(selectedChars);  
+  }
+  if (selectSmall) {
+    selectedChars = selectedChars.concat(smallLetters);
+  console.log(selectedChars);  
+  }
+  if (selectNum) {
+    selectedChars = selectedChars.concat(numbers);
+  console.log(selectedChars);  
+  }
+  if (selectSpecial) {
+    selectedChars = selectedChars.concat(specialChar);
+  console.log(selectedChars);  
+  }
+
+
+
+});
 
 
 
 
 
-//have a var array that has the arrays for the selected password types
 //var array length
 //var totalChars = selectedChars.length
 
