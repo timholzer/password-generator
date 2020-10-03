@@ -6,6 +6,7 @@ var bigLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 var smallLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", ];
+var selectedChars = [];
 
 //add other variables here
 var selectBig = "false";
@@ -26,29 +27,61 @@ document.getElementById("generate").addEventListener("click", function(){
 };
 
 
-//need to fix this loop
-while (selectBig === "false" && selectSmall === "false" && selectNum === "false" && selectSpecial === "false") {
+//confirm "do you want upper case, lower, etc"
+//if no confirms then loop back to the confirms
   selectBig = confirm("Do you want uppercase letters?");
   selectSmall = confirm("Do you want lowercase letters?");
   selectNum = confirm("Do you want numbers?");
   selectSpecial = confirm("Do you want special characters?");
+
+  if (selectBig || selectSmall || selectSpecial || selectNum) {
+  } 
+  else {
+    selectBig = confirm("Do you want uppercase letters?");
+    selectSmall = confirm("Do you want lowercase letters?");
+    selectNum = confirm("Do you want numbers?");
+    selectSpecial = confirm("Do you want special characters?");
+  }
+  
   console.log(selectBig);
   console.log(selectSmall);
   console.log(selectNum);
   console.log(selectSpecial);
-}
-});
+  });
 
-//confirm "do you want upper case, lower, etc"
-//if no confirms then loop back to the confirms
+  
+  //gotta work on this part of pushing the selected arrays into the array of all the selected characters.
+  // if (selectBig === "true") {
+  //   selectedChars.push.apply(selectedChars, bigLetters);
+  // }
+  // console.log(selectedChars);
+
 
 
 
 
 //have a var array that has the arrays for the selected password types
 //var array length
+//var totalChars = selectedChars.length
+
 //randint of array -1 to select the input and loop through passlength
+// for(var i=1; i<= passLength; i++){
+//   var ranChar = mathRand.totalChars;
+//   var addedChar = selectedChars[ranChar];
+//   var password = "";
+//   password.push.apply(password, addedChar);
+
+// }
+
 //return string
+
+
+
+
+
+
+
+
 
 
 // Write password to the #password input
