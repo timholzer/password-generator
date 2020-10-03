@@ -66,8 +66,20 @@ document.getElementById("generate").addEventListener("click", function(){
     selectedChars = selectedChars.concat(specialChar);
   console.log(selectedChars);  
   }
+  //var array length
+  var totalChars = selectedChars.length
+  console.log(totalChars); 
 
 
+  var randItem = selectedChars[Math.floor(Math.random() * selectedChars.length)];
+
+  console.log(randItem);
+
+  
+  // for (let index = 0; index < selectedChars.length; index++) {
+  //   const element = array[index];
+    
+  // }
 
 });
 
@@ -75,8 +87,8 @@ document.getElementById("generate").addEventListener("click", function(){
 
 
 
-//var array length
-//var totalChars = selectedChars.length
+
+//
 
 //randint of array -1 to select the input and loop through passlength
 // for(var i=1; i<= passLength; i++){
