@@ -1,4 +1,3 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 //array of all upper/lower/number/special
@@ -14,10 +13,13 @@ var selectSmall = "false";
 var selectNum = "false";
 var selectSpecial = "false";
 var passLength = 0;
+var newPassword = "";
 
 //on button click - prompt "how long do you want your password to be? Has to be between 8-128 characters"
 //if passLength is between 8-128 then move on, if not ask prompt again
-document.getElementById("generate").addEventListener("click", function(){
+    
+  
+  document.getElementById("generate").addEventListener("click", function(){
   while (passLength > 129 || passLength < 7 || isNaN(passLength)){
   var passPrompt = prompt("how long do you want your password to be? Has to be between 8-128 characters");
   console.log(passPrompt); 
@@ -70,54 +72,37 @@ document.getElementById("generate").addEventListener("click", function(){
   var totalChars = selectedChars.length
   console.log(totalChars); 
 
-
-  var randItem = selectedChars[Math.floor(Math.random() * selectedChars.length)];
-
-  console.log(randItem);
-
-  
-  // for (let index = 0; index < selectedChars.length; index++) {
-  //   const element = array[index];
+  for(var i=1; i<= passLength; i++){
+    var randItem = selectedChars[Math.floor(Math.random() * selectedChars.length)];
+    console.log(randItem);
+    newPassword += randItem;
     
-  // }
+    
+  }
+
+  //adding a linebreak for people who want to run it again to do another password 
+  newPassword += "\n";
+  console.log(newPassword);
+
+  // reset the passLength so if they want to make another password it asks the password length again
+  passLength = 0;
 
 });
 
 
-
-
-
-
-//
-
-//randint of array -1 to select the input and loop through passlength
-// for(var i=1; i<= passLength; i++){
-//   var ranChar = mathRand.totalChars;
-//   var addedChar = selectedChars[ranChar];
-//   var password = "";
-//   password.push.apply(password, addedChar);
-
-// }
-
 //return string
 
 
+//Write password to the #password input
+function writePassword() {
+//  var newPassword = generatePassword();
+  var passwordText = document.querySelector("#password");
 
+  passwordText.value = newPassword;
 
+}
 
+//Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
-
-
-
-
-// Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+var passLength = 0;
