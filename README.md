@@ -1,3 +1,11 @@
+This is a password generator that lets you choose a length of 8-128 characters long. It does a check to make sure that a valid interger was inputed. You are then given a choice if you want upper case, lower case, numbers, and/or special characters. If none are selected it gives you an alert to try again. It then creates an array of what you selected and randomly selects as many characters as the user selected on the first prompt. It then writes that string to the text box.
+
+
+
+
+-Below is the orginal assignment, for your reference
+
+*****************************************************************************************************************************************
 # 03 JavaScript: Password Generator
 
 Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
